@@ -1,0 +1,26 @@
+{
+  "name": "apochill-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "verify": "node src/verify-kit.mjs",
+    "activity": "node src/activity-helper.mjs",
+    "activity:install": "powershell -NoProfile -File src/install-activity-helper.ps1",
+    "activity:uninstall": "powershell -NoProfile -File src/install-activity-helper.ps1 -RemoveStartup",
+    "predev": "node src/prepare-decoder.mjs",
+    "dev": "vite --host 127.0.0.1 --port 5174 --strictPort",
+    "prebuild": "node src/prepare-decoder.mjs",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort"
+  },
+  "dependencies": {
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
